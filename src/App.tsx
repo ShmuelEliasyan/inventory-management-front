@@ -7,10 +7,15 @@ import LayoutComponent from "./Components/Layout/LayoutComponent";
 import InventoryManagementComponent from "./Components/InventoryManagement/InventoryManagementComponent";
 import ShoesAmountPageContainer from "./Components/InventoryManagement/ShoesAmountPage/ShoesAmountPageContainer";
 import NewShoesPageContainer from "./Components/InventoryManagement/NewShoesPage/NewShoesPageContainer";
-import ShoesCatalogComponent from "./Components/ShoesCatalog/ShoesCatalogComponent";
 import ShoesCatalogContainer from "./Components/ShoesCatalog/ShoesCatalogContainer";
+import GraphsContainer from "./Components/Graphs/GraphsContainer";
+import {Chart as ChartJS, registerables} from "chart.js";
 
 function App() {
+    ChartJS.register(
+        ...registerables
+    );
+
     return (
         <Provider store={store}>
             <Router>
@@ -21,6 +26,7 @@ function App() {
                         <Route path="/inventory-management" element={<InventoryManagementComponent/>}/>
                         <Route path="/shoes-amount" element={<ShoesAmountPageContainer/>}/>
                         <Route path="/shoes-catalog" element={<ShoesCatalogContainer/>}/>
+                        <Route path="/graphs" element={<GraphsContainer/>}/>
                     </Routes>
                 </LayoutComponent>
             </Router>

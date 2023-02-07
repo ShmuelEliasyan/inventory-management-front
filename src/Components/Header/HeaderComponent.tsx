@@ -15,6 +15,7 @@ const HeaderComponent: FC = () => {
                     Catalog</Button>
                 <Button color="inherit" className={classes.button} onClick={() => navigate("/inventory-management")}>Inventory
                     Management</Button>
+                <Button color="inherit" className={classes.button} onClick={() => navigate("/graphs")}>Graphs</Button>
             </Toolbar>
         </AppBar>
     );
